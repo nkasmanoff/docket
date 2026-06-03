@@ -4,8 +4,10 @@ import { isSupabaseConfigured, SUPABASE_URL, SUPABASE_ANON_KEY } from "./config"
 
 // Paths that must stay reachable without a session.
 const PUBLIC_PREFIXES = ["/login", "/auth"];
+const PUBLIC_EXACT = ["/icon", "/apple-icon", "/favicon.ico"];
 
 function isPublic(pathname: string): boolean {
+  if (PUBLIC_EXACT.includes(pathname)) return true;
   return PUBLIC_PREFIXES.some(
     (p) => pathname === p || pathname.startsWith(p + "/"),
   );

@@ -9,18 +9,20 @@ export interface ShareOpts {
   mode: Mode;
   gridLines: string[];
   scoreLine?: string;
+  /** Full URL to this game (e.g. https://docket-topaz.vercel.app/games/crossed). */
+  gameUrl?: string;
 }
 
 // NYT-style shareable text block.
 export function buildShareText({
   gameName,
   dateKey,
-  mode,
   gridLines,
   scoreLine,
+  gameUrl,
 }: ShareOpts): string {
-  const tag =
-    mode === "daily" ? `#${puzzleNumber(dateKey)}` : "Practice";
+  const tag = `#${puzzleNumber(dateKey)}`;
   const title = `Docket ${gameName} ${tag}${scoreLine ? ` ${scoreLine}` : ""}`;
-  return [title, "", ...gridLines, "", FOOTER].join("\n");
+  const footer = gameUrl ? `${FOOTER}\n${gameUrl}` : FOOTER;
+  return [title, "", ...gridLines, "", footer].join("\n");
 }

@@ -35,7 +35,7 @@ function scoreGuess(guess: string, answer: string): LetterState[] {
 const ROWS = ["QWERTYUIOP", "ASDFGHJKL", "ZXCVBNM"];
 
 function Board({ loaded }: { loaded: LoadedPuzzle<HoldingPuzzle> }) {
-  const { puzzle, source, mode, reload } = loaded;
+  const { puzzle, source, mode } = loaded;
   const answer = puzzle.answer.toUpperCase();
   const toast = useToast();
   const stats = useGameStats("holding");
@@ -238,7 +238,6 @@ function Board({ loaded }: { loaded: LoadedPuzzle<HoldingPuzzle> }) {
             winPct: stats.winPct,
             played: stats.data.played,
           }}
-          onReplay={mode === "practice" ? reload : undefined}
         />
       )}
     </div>

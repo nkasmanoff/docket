@@ -23,7 +23,7 @@ function shuffle<T>(arr: T[], seed: number): T[] {
 }
 
 function Board({ loaded }: { loaded: LoadedPuzzle<ElementsPuzzle> }) {
-  const { puzzle, source, mode, reload } = loaded;
+  const { puzzle, source, mode } = loaded;
   const stats = useGameStats("elements");
   const rounds = puzzle.rounds;
   const saveKey = `docket:progress:elements:${mode}:${puzzle.dateKey}:${puzzle.subject ?? "x"}:${puzzle.difficulty}`;
@@ -137,7 +137,6 @@ function Board({ loaded }: { loaded: LoadedPuzzle<ElementsPuzzle> }) {
             winPct: stats.winPct,
             played: stats.data.played,
           }}
-          onReplay={mode === "practice" ? reload : undefined}
         />
       </div>
     );

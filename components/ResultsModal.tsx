@@ -23,7 +23,6 @@ interface Props {
     winPct: number;
     played: number;
   };
-  onReplay?: () => void;
   source?: "generated" | "fallback";
 }
 
@@ -65,7 +64,6 @@ export function ResultsModal({
   result,
   takeaways,
   stats,
-  onReplay,
   source,
 }: Props) {
   return (
@@ -73,7 +71,7 @@ export function ResultsModal({
       <div className="space-y-5">
         {source === "fallback" && (
           <p className="rounded bg-partial/15 px-3 py-2 text-center text-xs text-ink/70">
-            Practice puzzle (offline) — served from a bundled example.
+            Offline puzzle — served from a bundled example.
           </p>
         )}
 
@@ -119,15 +117,7 @@ export function ResultsModal({
           }}
         />
 
-        {result.mode === "daily" ? (
-          <Countdown />
-        ) : (
-          onReplay && (
-            <Button variant="secondary" onClick={onReplay} className="w-full">
-              New practice puzzle
-            </Button>
-          )
-        )}
+        <Countdown />
       </div>
     </Modal>
   );

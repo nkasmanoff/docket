@@ -17,7 +17,7 @@ interface RoundScore {
 }
 
 function Board({ loaded }: { loaded: LoadedPuzzle<IssueSpotterPuzzle> }) {
-  const { puzzle, source, mode, reload } = loaded;
+  const { puzzle, source, mode } = loaded;
   const stats = useGameStats("issue-spotter");
   const rounds = puzzle.rounds;
   const saveKey = `docket:progress:issue-spotter:${mode}:${puzzle.dateKey}:${puzzle.subject ?? "x"}:${puzzle.difficulty}`;
@@ -127,7 +127,6 @@ function Board({ loaded }: { loaded: LoadedPuzzle<IssueSpotterPuzzle> }) {
             winPct: stats.winPct,
             played: stats.data.played,
           }}
-          onReplay={mode === "practice" ? reload : undefined}
         />
       </div>
     );

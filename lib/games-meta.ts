@@ -18,6 +18,8 @@ export interface GameMeta {
   blurb: string;
   icon: string;
   beta?: boolean;
+  /** When false, hidden from the home page and puzzle API. */
+  enabled?: boolean;
   /** "opus" = flagship reasoning; "fast" = Sonnet for cheap word games. */
   engine: "opus" | "fast";
   calibrator: CalibratorConfig;
@@ -32,7 +34,7 @@ const STD_SUBJECTS: { label: string; value: Subject | "Mixed" }[] = [
   { label: "Mixed", value: "Mixed" },
 ];
 
-export const GAMES: GameMeta[] = [
+const ALL_GAMES: GameMeta[] = [
   {
     slug: "crossed",
     name: "Crossed",
@@ -65,6 +67,7 @@ export const GAMES: GameMeta[] = [
     name: "The Brief",
     blurb: "A 5×5 mini crossword of legal terms.",
     icon: "📝",
+    enabled: false,
     engine: "fast",
     calibrator: {
       subjects: [
@@ -121,6 +124,7 @@ export const GAMES: GameMeta[] = [
     name: "The Hunt",
     blurb: "Find the hidden study set in a letter grid.",
     icon: "🔦",
+    enabled: false,
     engine: "opus",
     calibrator: {
       subjects: STD_SUBJECTS,
@@ -134,6 +138,7 @@ export const GAMES: GameMeta[] = [
     blurb: "Assemble Latin legal maxims from word tiles.",
     icon: "🏛️",
     beta: true,
+    enabled: false,
     engine: "opus",
     calibrator: {
       difficultyQuestion: "How obscure should the maxims be?",
@@ -142,8 +147,16 @@ export const GAMES: GameMeta[] = [
   },
 ];
 
+/** Games shown on the home page and playable via the API. */
+export const GAMES = ALL_GAMES.filter((g) => g.enabled !== false);
+
+export function isGameEnabled(slug: string): boolean {
+  const g = ALL_GAMES.find((x) => x.slug === slug);
+  return !!g && g.enabled !== false;
+}
+
 export function gameMeta(slug: string): GameMeta | undefined {
-  return GAMES.find((g) => g.slug === slug);
+  return ALL_GAMES.find((g) => g.slug === slug);
 }
 
 // Map a difficulty-proxy choice index (0,1,2) to a 1-5 difficulty.

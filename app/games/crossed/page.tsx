@@ -39,7 +39,7 @@ interface SaveState {
 }
 
 function Board({ loaded }: { loaded: LoadedPuzzle<CrossedPuzzle> }) {
-  const { puzzle, source, mode, reload } = loaded;
+  const { puzzle, source, mode } = loaded;
   const toast = useToast();
   const stats = useGameStats("crossed");
 
@@ -290,7 +290,6 @@ function Board({ loaded }: { loaded: LoadedPuzzle<CrossedPuzzle> }) {
             winPct: stats.winPct,
             played: stats.data.played,
           }}
-          onReplay={mode === "practice" ? reload : undefined}
         />
       )}
     </div>

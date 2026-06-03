@@ -26,7 +26,7 @@ function adjacent(a: Pt, b: Pt) {
 }
 
 function Board({ loaded }: { loaded: LoadedPuzzle<HuntPuzzle> }) {
-  const { puzzle, source, mode, reload } = loaded;
+  const { puzzle, source, mode } = loaded;
   const toast = useToast();
   const stats = useGameStats("hunt");
   const saveKey = `docket:progress:hunt:${mode}:${puzzle.dateKey}:${puzzle.subject ?? "x"}:${puzzle.difficulty}`;
@@ -251,7 +251,6 @@ function Board({ loaded }: { loaded: LoadedPuzzle<HuntPuzzle> }) {
             winPct: stats.winPct,
             played: stats.data.played,
           }}
-          onReplay={mode === "practice" ? reload : undefined}
         />
       )}
     </div>

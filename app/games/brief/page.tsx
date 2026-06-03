@@ -46,7 +46,7 @@ function fmtTime(s: number) {
 }
 
 function Board({ loaded }: { loaded: LoadedPuzzle<BriefPuzzle> }) {
-  const { puzzle, source, mode, reload } = loaded;
+  const { puzzle, source, mode } = loaded;
   const toast = useToast();
   const stats = useGameStats("brief");
   const cells = useMemo(() => buildModel(puzzle), [puzzle]);
@@ -376,7 +376,6 @@ function Board({ loaded }: { loaded: LoadedPuzzle<BriefPuzzle> }) {
             winPct: stats.winPct,
             played: stats.data.played,
           }}
-          onReplay={mode === "practice" ? reload : undefined}
         />
       )}
     </div>

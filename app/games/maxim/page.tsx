@@ -17,7 +17,7 @@ function rankFor(p: MaximPuzzle, pct: number): string {
 }
 
 function Board({ loaded }: { loaded: LoadedPuzzle<MaximPuzzle> }) {
-  const { puzzle, source, mode, reload } = loaded;
+  const { puzzle, source, mode } = loaded;
   const toast = useToast();
   const stats = useGameStats("maxim");
   const saveKey = `docket:progress:maxim:${mode}:${puzzle.dateKey}:${puzzle.difficulty}`;
@@ -160,7 +160,6 @@ function Board({ loaded }: { loaded: LoadedPuzzle<MaximPuzzle> }) {
             winPct: stats.winPct,
             played: stats.data.played,
           }}
-          onReplay={mode === "practice" ? reload : undefined}
         />
       )}
     </div>

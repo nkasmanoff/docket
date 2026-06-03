@@ -55,8 +55,8 @@ export default function Home() {
             Your daily bar-prep habit
           </h1>
           <p className="mt-2 text-ink/60">
-            A fresh puzzle every day, graded on settled black-letter law. Build a
-            streak — or drill any subject in Practice.
+            A fresh puzzle every day, graded on settled black-letter law. Build your
+            streak across the daily lineup.
           </p>
         </div>
 

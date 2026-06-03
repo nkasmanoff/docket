@@ -1,11 +1,12 @@
 import { NextRequest, NextResponse } from "next/server";
+import { isGameEnabled } from "@/lib/games-meta";
 import { REGISTRY } from "@/lib/games-registry";
 import { generatePuzzle } from "@/lib/generate";
 import { cacheKey, getCached, setCached } from "@/lib/puzzle-cache";
 import { dailyParamsFor } from "@/lib/daily-rotation";
 import { takeToken } from "@/lib/rate-limit";
 import { dateKey } from "@/lib/date";
-import type { GenParams, Mode, Subject, Difficulty, PuzzleMeta } from "@/lib/types";
+import type { GenParams, Mode, PuzzleMeta } from "@/lib/types";
 
 export const runtime = "nodejs";
 export const maxDuration = 30;
@@ -30,7 +31,7 @@ export async function POST(
 ) {
   const { game } = await ctx.params;
   const spec = REGISTRY[game];
-  if (!spec) {
+  if (!spec || !isGameEnabled(game)) {
     return NextResponse.json({ error: `Unknown game: ${game}` }, { status: 404 });
   }
 
@@ -42,36 +43,14 @@ export async function POST(
     );
   }
 
-  let body: Partial<GenParams> = {};
-  try {
-    body = await req.json();
-  } catch {
-    body = {};
-  }
-
-  const mode: Mode = body.mode === "daily" ? "daily" : "practice";
   const day = dateKey();
-
-  // Build the authoritative params. Daily mode ignores client subject/difficulty
-  // and uses the fixed rotation so everyone shares the same puzzle.
-  let params: GenParams;
-  if (mode === "daily") {
-    const fixed = dailyParamsFor(game, day);
-    params = { mode, subject: fixed.subject, difficulty: fixed.difficulty };
-  } else {
-    const difficulty = clampDifficulty(body.difficulty);
-    const subject =
-      body.subject && body.subject !== ("Mixed" as Subject)
-        ? (body.subject as Subject)
-        : undefined;
-    params = {
-      mode,
-      subject,
-      difficulty,
-      recentScore:
-        typeof body.recentScore === "number" ? body.recentScore : undefined,
-    };
-  }
+  const mode: Mode = "daily";
+  const fixed = dailyParamsFor(game, day);
+  const params: GenParams = {
+    mode,
+    subject: fixed.subject,
+    difficulty: fixed.difficulty,
+  };
 
   const key = cacheKey(game, params);
   const cached = getCached<{ puzzle: unknown; source: string; difficulty: number }>(key);
@@ -133,7 +112,3 @@ function setSid(res: NextResponse, id: string) {
   });
 }
 
-function clampDifficulty(d: unknown): Difficulty {
-  const n = typeof d === "number" ? Math.round(d) : 3;
-  return (Math.min(5, Math.max(1, n)) as Difficulty) || 3;
-}

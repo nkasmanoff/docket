@@ -15,7 +15,7 @@ interface ItemResult {
 }
 
 function Board({ loaded }: { loaded: LoadedPuzzle<ObjectionPuzzle> }) {
-  const { puzzle, source, mode, reload } = loaded;
+  const { puzzle, source, mode } = loaded;
   const stats = useGameStats("objection");
   const items = puzzle.items;
 
@@ -105,7 +105,6 @@ function Board({ loaded }: { loaded: LoadedPuzzle<ObjectionPuzzle> }) {
         puzzle={puzzle}
         showResults={showResults}
         setShowResults={setShowResults}
-        onReplay={mode === "practice" ? reload : undefined}
       />
     );
   }
@@ -237,7 +236,6 @@ function ResultsView({
   puzzle,
   showResults,
   setShowResults,
-  onReplay,
 }: any) {
   return (
     <div className="flex flex-col items-center gap-4">
@@ -267,7 +265,6 @@ function ResultsView({
           winPct: stats.winPct,
           played: stats.data.played,
         }}
-        onReplay={onReplay}
       />
     </div>
   );

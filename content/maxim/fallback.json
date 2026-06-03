@@ -1,0 +1,21 @@
+{
+  "game": "maxim",
+  "dateKey": "2026-01-01",
+  "mode": "practice",
+  "subject": "CrimLaw",
+  "difficulty": 3,
+  "tilePool": ["RES", "IPSA", "LOQUITUR", "RESPONDEAT", "SUPERIOR", "STARE", "DECISIS", "HABEAS", "CORPUS", "MENS", "REA", "ACTUS", "REUS"],
+  "maxims": [
+    { "phrase": "Res Ipsa Loquitur", "tiles": ["RES", "IPSA", "LOQUITUR"], "meaning": "'The thing speaks for itself' — negligence inferred from the accident itself." },
+    { "phrase": "Respondeat Superior", "tiles": ["RESPONDEAT", "SUPERIOR"], "meaning": "An employer is liable for torts an employee commits within the scope of employment." },
+    { "phrase": "Stare Decisis", "tiles": ["STARE", "DECISIS"], "meaning": "Courts should stand by precedent and not disturb settled points." },
+    { "phrase": "Habeas Corpus", "tiles": ["HABEAS", "CORPUS"], "meaning": "A writ testing the legality of a person's detention." },
+    { "phrase": "Mens Rea", "tiles": ["MENS", "REA"], "meaning": "The guilty mind — the mental state required for a crime." },
+    { "phrase": "Actus Reus", "tiles": ["ACTUS", "REUS"], "meaning": "The guilty act — the physical element of a crime." }
+  ],
+  "ranks": [
+    { "name": "Clerk", "threshold": 0 },
+    { "name": "Associate", "threshold": 0.5 },
+    { "name": "Partner", "threshold": 1.0 }
+  ]
+}

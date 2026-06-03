@@ -1,0 +1,103 @@
+{
+  "game": "brief",
+  "dateKey": "2026-01-01",
+  "mode": "practice",
+  "subject": "Mixed",
+  "difficulty": 2,
+  "size": 5,
+  "blocked": [],
+  "clues": [
+    {
+      "num": 1,
+      "dir": "across",
+      "clue": "Across entry (row 1)",
+      "answer": "VENUE",
+      "row": 0,
+      "col": 0
+    },
+    {
+      "num": 2,
+      "dir": "across",
+      "clue": "Across entry (row 2)",
+      "answer": "ACARI",
+      "row": 1,
+      "col": 0
+    },
+    {
+      "num": 3,
+      "dir": "across",
+      "clue": "Across entry (row 3)",
+      "answer": "IHRAM",
+      "row": 2,
+      "col": 0
+    },
+    {
+      "num": 4,
+      "dir": "across",
+      "clue": "Across entry (row 4)",
+      "answer": "REESE",
+      "row": 3,
+      "col": 0
+    },
+    {
+      "num": 5,
+      "dir": "across",
+      "clue": "Across entry (row 5)",
+      "answer": "EASER",
+      "row": 4,
+      "col": 0
+    },
+    {
+      "num": 6,
+      "dir": "down",
+      "clue": "Down entry (col 1)",
+      "answer": "VAIRE",
+      "row": 0,
+      "col": 0
+    },
+    {
+      "num": 7,
+      "dir": "down",
+      "clue": "Down entry (col 2)",
+      "answer": "ECHEA",
+      "row": 0,
+      "col": 1
+    },
+    {
+      "num": 8,
+      "dir": "down",
+      "clue": "Down entry (col 3)",
+      "answer": "NARES",
+      "row": 0,
+      "col": 2
+    },
+    {
+      "num": 9,
+      "dir": "down",
+      "clue": "Down entry (col 4)",
+      "answer": "URASE",
+      "row": 0,
+      "col": 3
+    },
+    {
+      "num": 10,
+      "dir": "down",
+      "clue": "Down entry (col 5)",
+      "answer": "EIMER",
+      "row": 0,
+      "col": 4
+    }
+  ],
+  "teach": {
+    "VENUE": "VENUE — a five-letter entry; verify in a legal dictionary.",
+    "ACARI": "ACARI — a five-letter entry; verify in a legal dictionary.",
+    "IHRAM": "IHRAM — a five-letter entry; verify in a legal dictionary.",
+    "REESE": "REESE — a five-letter entry; verify in a legal dictionary.",
+    "EASER": "EASER — a five-letter entry; verify in a legal dictionary.",
+    "VAIRE": "VAIRE — a five-letter entry; verify in a legal dictionary.",
+    "ECHEA": "ECHEA — a five-letter entry; verify in a legal dictionary.",
+    "NARES": "NARES — a five-letter entry; verify in a legal dictionary.",
+    "URASE": "URASE — a five-letter entry; verify in a legal dictionary.",
+    "EIMER": "EIMER — a five-letter entry; verify in a legal dictionary."
+  }
+}

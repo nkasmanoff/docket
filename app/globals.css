@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --ink: #1a1a2e;
+  --parchment: #f4f1ea;
+  --surface: #ffffff;
+  --brass: #b08d57;
+}
+
+html,
+body {
+  background-color: var(--parchment);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+}
+
+@layer base {
+  body {
+    @apply font-sans;
+  }
+  h1, h2, h3, .display {
+    @apply font-serif;
+  }
+}
+
+/* Hairline divider used across cards */
+.hairline {
+  border-color: rgba(26, 26, 46, 0.12);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+/* Visible focus ring everywhere */
+:focus-visible {
+  outline: 2px solid var(--brass);
+  outline-offset: 2px;
+}

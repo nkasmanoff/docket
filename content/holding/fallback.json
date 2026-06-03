@@ -1,0 +1,10 @@
+{
+  "game": "holding",
+  "dateKey": "2026-01-01",
+  "mode": "practice",
+  "subject": "CivPro",
+  "difficulty": 2,
+  "answer": "VENUE",
+  "definition": "The proper court or location where a case may be heard.",
+  "example": "Improper venue can be waived if not timely raised."
+}

@@ -1,0 +1,27 @@
+{
+  "game": "elements",
+  "dateKey": "2026-01-01",
+  "mode": "practice",
+  "subject": "Torts",
+  "difficulty": 3,
+  "rounds": [
+    {
+      "claim": "Negligence",
+      "required": ["Duty", "Breach", "Actual cause", "Proximate cause", "Damages"],
+      "distractors": ["Intent", "Harmful or offensive contact", "Consideration"],
+      "ruleStatement": "Negligence = duty, breach, actual and proximate causation, and damages."
+    },
+    {
+      "claim": "Common-law Battery",
+      "required": ["Intent", "Harmful or offensive contact", "Causation"],
+      "distractors": ["Damages", "Duty", "Apprehension"],
+      "ruleStatement": "Battery = intent to cause, and causation of, a harmful or offensive contact; actual damages are not required."
+    },
+    {
+      "claim": "Common-law Burglary",
+      "required": ["Breaking", "Entering", "Dwelling of another", "At night", "Intent to commit a felony inside"],
+      "distractors": ["Carrying away", "Trespassory taking", "Force or fear"],
+      "ruleStatement": "Burglary = breaking and entering the dwelling of another at night with intent to commit a felony therein."
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "game": "issue-spotter",
+  "dateKey": "2026-01-01",
+  "mode": "practice",
+  "subject": "Contracts",
+  "difficulty": 3,
+  "rounds": [
+    {
+      "facts": "A emails B offering 500 widgets at $2 each, 'firm for 10 days,' signed. On day 3, before B replies, A emails 'never mind, sold them.' B then emails 'I accept.' Both are merchants.",
+      "subject": "Contracts",
+      "options": [
+        { "label": "UCC Article 2 governs", "present": true, "why": "Widgets are movable goods, so Article 2 applies." },
+        { "label": "Firm offer irrevocable without consideration", "present": true, "why": "A signed merchant's written assurance to hold the offer is a firm offer under 2-205." },
+        { "label": "Attempted revocation before acceptance", "present": true, "why": "A tried to revoke during the irrevocable firm-offer period." },
+        { "label": "Mailbox rule timing", "present": true, "why": "Whether acceptance was effective on dispatch is squarely raised." },
+        { "label": "Statute of Frauds ($500+)", "present": true, "why": "A sale of goods for $500 or more must be evidenced by a signed writing." },
+        { "label": "Promissory estoppel", "present": false, "why": "No facts show detrimental reliance by B." },
+        { "label": "Parol evidence rule", "present": false, "why": "There is no prior or contemporaneous agreement being contradicted." },
+        { "label": "Impracticability", "present": false, "why": "No supervening event made performance impracticable." }
+      ]
+    },
+    {
+      "facts": "Homeowner orally promises a painter $3,000 to paint her house over the summer. The painter buys $400 of special paint, then the homeowner cancels before any work begins, saying nothing was in writing.",
+      "subject": "Contracts",
+      "options": [
+        { "label": "Statute of Frauds (one-year clause)", "present": false, "why": "The job can be completed within one year, so the one-year clause does not apply." },
+        { "label": "Bilateral contract formed", "present": true, "why": "Exchange of promises to paint and to pay creates a bilateral contract." },
+        { "label": "Promissory estoppel / reliance", "present": true, "why": "The painter relied by buying special paint, supporting reliance recovery." },
+        { "label": "Anticipatory repudiation", "present": true, "why": "Cancelling before performance is due is a repudiation." },
+        { "label": "Consideration", "present": true, "why": "The promised payment and promised work are bargained-for consideration." },
+        { "label": "UCC Article 2 governs", "present": false, "why": "This is predominantly a service contract, so common law governs." },
+        { "label": "Accord and satisfaction", "present": false, "why": "There is no new agreement to discharge an existing disputed debt." }
+      ]
+    }
+  ]
+}

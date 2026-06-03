@@ -1,0 +1,33 @@
+{
+  "game": "crossed",
+  "dateKey": "2026-01-01",
+  "mode": "practice",
+  "subject": "Evidence",
+  "difficulty": 3,
+  "groups": [
+    {
+      "name": "Intentional Torts",
+      "difficulty": 1,
+      "members": ["Battery", "Assault", "False Imprisonment", "Conversion"],
+      "teach": "Intentional torts require intent to do the act, not intent to harm."
+    },
+    {
+      "name": "Hearsay Exceptions",
+      "difficulty": 2,
+      "members": ["Excited Utterance", "Dying Declaration", "Business Records", "Present Sense Impression"],
+      "teach": "These come in even though the declarant isn't testifying."
+    },
+    {
+      "name": "Future Interests",
+      "difficulty": 3,
+      "members": ["Reversion", "Remainder", "Executory Interest", "Possibility of Reverter"],
+      "teach": "Future interests are present rights to future possession."
+    },
+    {
+      "name": "Defenses to Negligence",
+      "difficulty": 4,
+      "members": ["Comparative Fault", "Assumption of Risk", "Contributory Negligence", "Last Clear Chance"],
+      "teach": "Last Clear Chance rebuts contributory negligence — a defense to a defense."
+    }
+  ]
+}

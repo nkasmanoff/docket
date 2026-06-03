@@ -1,0 +1,253 @@
+{
+  "game": "hunt",
+  "dateKey": "2026-01-01",
+  "mode": "practice",
+  "difficulty": 3,
+  "rows": 8,
+  "cols": 6,
+  "grid": [
+    "EXCEPT",
+    "XESNOI",
+    "CITEDB",
+    "SENISU",
+    "SPRESE",
+    "TATSTN",
+    "EMENTM",
+    "LACIDE"
+  ],
+  "theme": "Hearsay Exceptions",
+  "words": [
+    {
+      "word": "EXCEPTIONS",
+      "path": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          0,
+          4
+        ],
+        [
+          0,
+          5
+        ],
+        [
+          1,
+          5
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "isSpangram": true
+    },
+    {
+      "word": "EXCITED",
+      "path": [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          2,
+          4
+        ]
+      ]
+    },
+    {
+      "word": "BUSINESS",
+      "path": [
+        [
+          2,
+          5
+        ],
+        [
+          3,
+          5
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          4,
+          0
+        ]
+      ]
+    },
+    {
+      "word": "PRESENT",
+      "path": [
+        [
+          4,
+          1
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          4,
+          3
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          5,
+          5
+        ],
+        [
+          5,
+          4
+        ]
+      ]
+    },
+    {
+      "word": "STATEMENT",
+      "path": [
+        [
+          5,
+          3
+        ],
+        [
+          5,
+          2
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          5,
+          0
+        ],
+        [
+          6,
+          0
+        ],
+        [
+          6,
+          1
+        ],
+        [
+          6,
+          2
+        ],
+        [
+          6,
+          3
+        ],
+        [
+          6,
+          4
+        ]
+      ]
+    },
+    {
+      "word": "MEDICAL",
+      "path": [
+        [
+          6,
+          5
+        ],
+        [
+          7,
+          5
+        ],
+        [
+          7,
+          4
+        ],
+        [
+          7,
+          3
+        ],
+        [
+          7,
+          2
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          7,
+          0
+        ]
+      ]
+    }
+  ],
+  "teach": {
+    "EXCITED": "Excited utterance: a statement on a startling event while under its stress.",
+    "BUSINESS": "Business records kept in the regular course of business are admissible.",
+    "PRESENT": "Present sense impression: describing an event while or just after it happens.",
+    "STATEMENT": "A statement against interest can come in when the declarant is unavailable.",
+    "MEDICAL": "Statements for medical diagnosis or treatment are admissible.",
+    "EXCEPTIONS": "Hearsay exceptions admit reliable out-of-court statements."
+  },
+  "subject": "Evidence"
+}

@@ -1,0 +1,65 @@
+{
+  "game": "objection",
+  "dateKey": "2026-01-01",
+  "mode": "practice",
+  "subject": "Evidence",
+  "difficulty": 3,
+  "items": [
+    {
+      "scenario": "Counsel on direct examination: 'You were terrified that night, weren't you?'",
+      "ruling": "Sustained",
+      "groundsOptions": ["Leading", "Hearsay", "Speculation", "Relevance"],
+      "correctGrounds": "Leading",
+      "explanation": "Leading questions are generally improper on direct examination."
+    },
+    {
+      "scenario": "Witness: 'My neighbor told me the light was red,' offered to prove the light was red.",
+      "ruling": "Sustained",
+      "groundsOptions": ["Hearsay", "Best evidence", "Authentication", "Foundation"],
+      "correctGrounds": "Hearsay",
+      "explanation": "An out-of-court statement offered for its truth with no exception is hearsay."
+    },
+    {
+      "scenario": "Treating physician relays what the patient said about how the injury happened, offered for diagnosis.",
+      "ruling": "Overruled",
+      "groundsOptions": ["No valid objection", "Hearsay", "Privilege", "Opinion"],
+      "correctGrounds": "No valid objection",
+      "explanation": "Statements made for medical diagnosis or treatment are a hearsay exception (FRE 803(4))."
+    },
+    {
+      "scenario": "On cross, counsel asks a question assuming a fact never put into evidence: 'After you hid the gun, where did you go?'",
+      "ruling": "Sustained",
+      "groundsOptions": ["Assumes facts not in evidence", "Leading", "Argumentative", "Compound"],
+      "correctGrounds": "Assumes facts not in evidence",
+      "explanation": "A question may not assume facts that have not been established by evidence."
+    },
+    {
+      "scenario": "Prosecutor offers evidence the defendant fled the jurisdiction after the crime, to show consciousness of guilt.",
+      "ruling": "Overruled",
+      "groundsOptions": ["No valid objection", "Character evidence", "Hearsay", "Unfair prejudice"],
+      "correctGrounds": "No valid objection",
+      "explanation": "Flight is admissible as circumstantial evidence of consciousness of guilt."
+    },
+    {
+      "scenario": "Lay witness testifies: 'In my opinion, the defendant was negligent and legally at fault.'",
+      "ruling": "Sustained",
+      "groundsOptions": ["Improper legal conclusion", "Speculation", "Hearsay", "Relevance"],
+      "correctGrounds": "Improper legal conclusion",
+      "explanation": "A lay witness may not give opinions on legal conclusions like negligence or fault."
+    },
+    {
+      "scenario": "To prove the contents of a written contract, counsel asks the witness to describe the terms from memory; the original is available.",
+      "ruling": "Sustained",
+      "groundsOptions": ["Best evidence rule", "Hearsay", "Foundation", "Relevance"],
+      "correctGrounds": "Best evidence rule",
+      "explanation": "To prove the contents of a writing, the original is required unless an exception applies (FRE 1002)."
+    },
+    {
+      "scenario": "A police officer testifies that a bystander, moments after a crash, shouted 'the blue car ran the red light!'",
+      "ruling": "Overruled",
+      "groundsOptions": ["No valid objection", "Hearsay", "Speculation", "Authentication"],
+      "correctGrounds": "No valid objection",
+      "explanation": "A spontaneous statement about a startling event is admissible as an excited utterance (FRE 803(2))."
+    }
+  ]
+}

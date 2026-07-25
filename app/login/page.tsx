@@ -1,6 +1,6 @@
 "use client";
-import { Suspense, useState } from "react";
-import { useSearchParams } from "next/navigation";
+import { Suspense, useEffect, useState } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
 import { createClient } from "@/lib/supabase/client";
 import { isSupabaseConfigured } from "@/lib/supabase/config";
 import { Wordmark } from "@/components/PageShell";
@@ -13,6 +13,7 @@ const ERROR_COPY: Record<string, string> = {
 
 function LoginInner() {
   const params = useSearchParams();
+  const router = useRouter();
   const urlError = params.get("error");
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">(
@@ -21,6 +22,13 @@ function LoginInner() {
   const [message, setMessage] = useState("");
 
   const configured = isSupabaseConfigured();
+
+  // Auth is off — the site is open, so /login has no purpose. Send people home.
+  useEffect(() => {
+    if (!configured) router.replace("/");
+  }, [configured, router]);
+
+  if (!configured) return null;
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -62,13 +70,6 @@ function LoginInner() {
         {urlError && (
           <p className="mt-4 rounded-lg border border-incorrect/30 bg-incorrect/10 px-3 py-2 text-sm text-incorrect">
             {ERROR_COPY[urlError] ?? "Sign-in failed. Please try again."}
-          </p>
-        )}
-
-        {!configured && (
-          <p className="mt-4 rounded-lg border border-brass/40 bg-brass/10 px-3 py-2 text-sm text-ink/70">
-            Supabase isn&apos;t configured yet, so sign-in is disabled. Set the
-            Supabase environment variables to enable it.
           </p>
         )}
 

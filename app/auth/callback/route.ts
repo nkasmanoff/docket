@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { createClient } from "@/lib/supabase/server";
+import { isSupabaseConfigured } from "@/lib/supabase/config";
 
 export const runtime = "nodejs";
 
@@ -8,6 +9,11 @@ export const runtime = "nodejs";
 // A non-listed user is signed straight back out — this is the real access gate.
 export async function GET(request: Request) {
   const { searchParams, origin } = new URL(request.url);
+
+  // Auth is off — nothing to exchange, just go home.
+  if (!isSupabaseConfigured()) {
+    return NextResponse.redirect(`${origin}/`);
+  }
   const code = searchParams.get("code");
   const next = searchParams.get("next") ?? "/";
 

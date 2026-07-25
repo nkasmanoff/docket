@@ -12,7 +12,8 @@ validated at runtime, and fall back to bundled examples if generation fails.
 - Per-user game state (streaks, completion, calibration, cached results) is in
   `localStorage`.
 - Access is gated by **Supabase magic-link auth** against an `allowed_users`
-  table (invite-only). See [Authentication](#authentication).
+  table (invite-only) — **currently disabled**, see
+  [Authentication](#authentication).
 
 ## Getting started
 
@@ -34,6 +35,12 @@ exposed to the browser — the client only ever calls `/api/puzzle/*`.
 fallback puzzle and labels itself "Practice puzzle (offline)."
 
 ## Authentication
+
+> **Auth is currently OFF.** `AUTH_ENABLED = false` in `lib/supabase/config.ts`
+> makes the whole auth layer no-op: middleware lets every request through,
+> `/login` redirects home, and no Supabase calls are made. The site is open to
+> everyone. To re-enable the invite-only gate, set `AUTH_ENABLED = true` and
+> follow the setup below.
 
 The site is invite-only via Supabase magic-link (passwordless email) auth.
 Middleware (`middleware.ts` → `lib/supabase/middleware.ts`) gates **every** route
